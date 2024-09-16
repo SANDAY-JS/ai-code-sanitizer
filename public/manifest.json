@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "name": "Code Sanitizer for AI Chats",
+    "version": "1.0",
+    "description": "Replaces confidential information in code before submission to AI chat platforms.",
+    "permissions": ["storage", "scripting"],
+    "host_permissions": ["https://chat.openai.com/*", "https://chatgpt.com/*", "https://claude.ai/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*", "https://claude.ai/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
